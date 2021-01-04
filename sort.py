@@ -1,18 +1,18 @@
 # Sifts through the file and outputs the specified string in a .txt file
 def sort(file, export, string):
-	file = open(file, 'r+')
+	file = open(file, "r+", encoding="utf-8")
 	for lines in file.readlines():
 		if string in lines:
-			print("\n" + lines.replace("\n", ""))
-			with open(export, "a") as output:
+			print(lines.replace("\n", ""))
+			with open(export, "a", encoding="utf-8") as output:
 				output.write(lines)
 
 # Verifies if the export file exists or not, if not create file
 def check_export(export):
 	try:
-		file = open(export, 'r')
+		file = open(export, 'r', encoding="utf-8")
 	except IOError:
-		file = open(export, 'w')
+		file = open(export, 'w', encoding="utf-8")
 
 if __name__ == "__main__":
 	file_name = input("[!] Input the file name you want to sort: ")
