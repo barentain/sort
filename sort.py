@@ -1,6 +1,6 @@
 # Sifts through the file and outputs the specified string in a .txt file
 def sort(file, export, string):
-	file = open(rf"{file}", "r+", encoding="utf-8")
+	file = open(file, "r+", encoding="utf-8")
 	for lines in file.readlines():
 		if string in lines:
 			print(lines.replace("\n", ""))
